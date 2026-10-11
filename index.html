@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Felix Musyoka Mumo — ICT Officer | Data, Dashboards &amp; Systems</title>
-<meta name="description" content="Felix Musyoka Mumo — ICT Officer in Nairobi. Systems analysis, ICT infrastructure, data analysis in Python, and dashboard development for evidence-based decisions.">
+<title>Felix Musyoka Mumo — ICT Officer | Data, Power BI Dashboards &amp; Systems</title>
+<meta name="description" content="Felix Musyoka Mumo — ICT Officer in Nairobi. Systems analysis, ICT infrastructure, data analysis in Python, and Power BI dashboard development with Power Query and DAX for evidence-based decisions.">
 <meta name="author" content="Felix Musyoka Mumo">
-<meta property="og:title" content="Felix Musyoka Mumo — ICT Officer | Data, Dashboards &amp; Systems">
-<meta property="og:description" content="Seven years running ICT systems, now focused on data analysis in Python and dashboard development.">
+<meta property="og:title" content="Felix Musyoka Mumo — ICT Officer | Data, Power BI Dashboards &amp; Systems">
+<meta property="og:description" content="Seven years running ICT systems, now focused on data analysis in Python and Power BI dashboard development.">
 <meta property="og:image" content="photo.jpg">
 <meta property="og:type" content="profile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,7 @@
   --amber-deep:#C07C1A;
   --amber-pale:#FCF6E9;
   --online:#4FB98A;
+  --pbi:#F2C811;
   --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --wrap:1160px;
@@ -101,6 +102,8 @@ h1 .surname{display:block;color:var(--amber)}
 .chip:hover{border-color:rgba(233,161,59,.6);background:rgba(233,161,59,.08)}
 .chip.live{border-color:rgba(79,185,138,.6)}
 .chip.live i{color:var(--online)}
+.chip.bi{border-color:rgba(242,200,17,.55)}
+.chip.bi i{color:var(--pbi)}
 .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
 .btn{
   display:inline-flex;align-items:center;gap:10px;padding:13px 24px;font-size:15px;font-weight:600;
@@ -161,13 +164,13 @@ section{padding:90px 0}
 .bay:hover{background:#11402F}
 .bay h3{font-size:18.5px;color:#fff;display:flex;align-items:center;gap:14px}
 .bay h3 .ico{width:38px;height:38px;display:grid;place-items:center;background:var(--amber);color:#1B1206;font-size:15px;flex:none;transition:transform .4s var(--ease)}
-.bay:nth-child(2) h3 .ico{background:var(--online);color:#08281C}
-.bay:nth-child(3) h3 .ico{background:#5AA9E6;color:#06263B}
-.bay:nth-child(4) h3 .ico{background:#7FC4AE;color:#08281C}
-.bay:nth-child(5) h3 .ico{background:#D98A5E;color:#2B1408}
-.bay:nth-child(6) h3 .ico{background:#9B8BD6;color:#1A1436}
-.bay:nth-child(7) h3 .ico{background:#6FC2B0;color:#06291F}
-.bay:nth-child(8) h3 .ico{background:#E8C05A;color:#2B2108}
+.bay:nth-child(3) h3 .ico{background:var(--online);color:#08281C}
+.bay:nth-child(4) h3 .ico{background:#5AA9E6;color:#06263B}
+.bay:nth-child(5) h3 .ico{background:#7FC4AE;color:#08281C}
+.bay:nth-child(6) h3 .ico{background:#D98A5E;color:#2B1408}
+.bay:nth-child(7) h3 .ico{background:#9B8BD6;color:#1A1436}
+.bay:nth-child(8) h3 .ico{background:#6FC2B0;color:#06291F}
+.bay:nth-child(9) h3 .ico{background:#E8C05A;color:#2B2108}
 .bay:hover h3 .ico{transform:rotate(-6deg) scale(1.06)}
 .bay .blurb{margin:14px 0 20px;font-size:15.5px;color:var(--mint-dim);max-width:48ch;font-family:var(--serif);font-weight:300;line-height:1.6}
 .ports{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
@@ -176,6 +179,21 @@ section{padding:90px 0}
   background:rgba(255,255,255,.04);transition:border-color .25s var(--ease),background .25s var(--ease),transform .25s var(--ease);
 }
 .ports li:hover{border-color:var(--amber);background:rgba(233,161,59,.14);transform:translateY(-2px)}
+
+/* featured Power BI bay */
+.bay.feature{grid-column:1/-1;background:linear-gradient(135deg,#0F4232 0%,var(--deep) 60%);border-top:3px solid var(--pbi)}
+.bay.feature:hover{background:linear-gradient(135deg,#124A38 0%,#11402F 60%)}
+.bay.feature h3{font-size:21px}
+.bay.feature h3 .ico{background:var(--pbi);color:#2B2108}
+.bay.feature .flag{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--pbi);border:1px solid rgba(242,200,17,.5);padding:4px 10px;letter-spacing:0}
+.bay.feature .blurb{max-width:72ch}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.feature-grid h5{margin:0 0 12px;font-size:13.5px;font-weight:600;color:var(--pbi);display:flex;align-items:center;gap:8px}
+.feature-grid h5 i{font-size:12px}
+.feature-grid .ports li:hover{border-color:var(--pbi);background:rgba(242,200,17,.12)}
+.feature-proof{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:15px;color:var(--mint-dim);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.feature-proof a{color:#fff;font-weight:600;text-decoration:none;border-bottom:2px solid var(--pbi);display:inline-flex;align-items:center;gap:8px}
+.feature-proof a:hover{color:var(--pbi)}
 
 /* ---------- experience ---------- */
 #experience{background:var(--paper)}
@@ -213,6 +231,8 @@ section{padding:90px 0}
 .project.flash{animation:fadeIn .45s var(--ease)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .p-side .badge{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;font-size:13px;font-weight:600;padding:7px 12px}
+.p-side .badge.bi{background:var(--pbi);color:#2B2108}
+.p-side .new{display:inline-block;margin-left:6px;font-size:12px;font-weight:700;color:var(--amber-deep);border:1px solid var(--amber);padding:5px 8px;vertical-align:top}
 .p-side .year{font-size:15px;color:var(--muted);font-weight:600;margin-top:14px}
 .p-side .kind{font-size:14px;color:var(--green);margin-top:5px;font-weight:600}
 .p-side .stack{font-size:14px;color:var(--muted);margin-top:14px;line-height:1.5}
@@ -232,6 +252,22 @@ section{padding:90px 0}
 .p-link i{transition:transform .28s var(--ease)}
 .p-link:hover{color:var(--amber-deep)}
 .p-link:hover i{transform:translateX(4px)}
+.p-links{display:flex;flex-wrap:wrap;gap:8px 26px}
+
+/* featured project extras */
+.project.featured{background:linear-gradient(180deg,rgba(242,200,17,.07),transparent 70%);padding-left:22px;padding-right:22px;margin:0 -22px;border-left:3px solid var(--pbi)}
+.shot{margin:0 0 22px;border:1px solid var(--rule);background:#fff;max-width:760px}
+.shot img{width:100%;height:auto}
+.shot figcaption{font-size:13.5px;color:var(--muted);padding:10px 14px;border-top:1px solid var(--rule)}
+.pipeline-label{font-size:13.5px;font-weight:700;color:var(--green);margin:4px 0 10px;display:flex;align-items:center;gap:8px}
+.pipeline-label i{font-size:12px;color:var(--amber)}
+.pipeline{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);counter-reset:step;max-width:760px}
+.pipeline li{background:var(--paper);padding:14px 16px;font-size:14.5px;color:var(--body);counter-increment:step;line-height:1.5;transition:background .25s var(--ease)}
+.pipeline li:hover{background:#fff}
+.pipeline li strong{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
+.pipeline li strong::before{content:counter(step,decimal-leading-zero);color:var(--amber-deep);margin-right:9px;font-variant-numeric:tabular-nums}
+.takeaway{border-left:3px solid var(--amber);margin:0 0 18px;padding:2px 0 2px 16px;font-family:var(--serif);font-style:italic;font-weight:300;font-size:18.5px;line-height:1.6;color:#213029;max-width:62ch}
+
 .empty{padding:40px 0;color:var(--muted)}
 .sub{margin-top:60px}
 .sub h3{font-size:21px;margin-bottom:18px;display:flex;align-items:center;gap:12px}
@@ -326,6 +362,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
   .approach{grid-template-columns:1fr}
   .sites{grid-template-columns:1fr}
   .more{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:38px}
@@ -334,6 +371,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
   .panel{grid-template-columns:1fr}
   .project,.job{grid-template-columns:1fr;gap:16px}
   .contact-rows{grid-template-columns:1fr}
+  .pipeline{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:760px){
   .burger{display:inline-flex}
@@ -353,6 +391,10 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
   .stat b{font-size:30px}
   .about-body p{font-size:18px}
   .totop{right:16px;bottom:16px}
+  .feature-grid,.pipeline{grid-template-columns:1fr}
+  .bay.feature h3{flex-wrap:wrap}
+  .bay.feature .flag{margin-left:0}
+  .project.featured{margin:0 -20px;padding-left:17px;padding-right:20px}
 }
 @media print{
   .topbar,.filters,.actions,.totop,.progress,.strip::after{display:none}
@@ -396,6 +438,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
       <p class="role reveal d2">I run ICT systems end to end, then turn the data they produce into dashboards people actually make decisions with.</p>
       <div class="hero-meta reveal d2">
         <span class="chip live"><i class="fa-solid fa-circle-check"></i>Open to data &amp; AI roles</span>
+        <span class="chip bi"><i class="fa-solid fa-chart-column"></i>Power BI · DAX · Power Query</span>
         <span class="chip"><i class="fa-brands fa-python"></i>Data analysis in Python</span>
         <span class="chip"><i class="fa-solid fa-chart-line"></i>Dashboard development</span>
         <span class="chip"><i class="fa-solid fa-sitemap"></i>Systems analysis</span>
@@ -423,7 +466,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
       </div>
       <div class="stat">
         <span class="ico"><i class="fa-solid fa-cubes"></i></span>
-        <b data-count="15" data-suffix="">0</b>
+        <b data-count="16" data-suffix="">0</b>
         <span>Systems, dashboards, notebooks and websites designed, built or deployed</span>
       </div>
       <div class="stat">
@@ -450,6 +493,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
         <p>I am <strong>Felix Musyoka Mumo</strong>, an ICT Officer based in Kasarani, Nairobi, with a BSc in Information Technology from South Eastern Kenya University. For seven years I have carried the full ICT stack for institutions and non-profits — Microsoft 365 and Azure tenancies, networks and firewalls, servers and websites, endpoint security, CCTV and access control, backups, vendor contracts, and the users who depend on every part of it working.</p>
         <p>That range is deliberate. Running infrastructure taught me how organisations actually behave: where records get entered badly, which processes people quietly work around, and why a report nobody trusts gets ignored. It is the reason I can walk into a messy system and know which questions to ask first.</p>
         <p>My focus now is <strong>data and AI</strong>. The part of this work I keep returning to is what happens after a system is live — the records it accumulates. I analyse that data in Python with pandas and NumPy, model and visualise it, and build dashboards in Power BI that answer the questions management is actually asking. I have done this with M-Pesa transaction records, water billing and consumption data, and virtual campus revenue trends, turning raw logs into reporting that shaped real decisions.</p>
+        <p>In <strong>Power BI</strong> I work the whole path, not just the visuals: pinning down the business requirements and KPIs first, shaping the data in Power Query, building a clean data model, writing the DAX measures that carry the business logic, and designing interactive reports with slicers and drill-downs. My most recent build is a Hotel Business Dashboard that takes raw booking data to KPI-level insight.</p>
         <p>Underneath the analysis sits the discipline that makes it hold up: systems analysis and requirements gathering, database and ERD design, API integration, UAT, and documentation habits that make an analysis reproducible rather than a one-off spreadsheet somebody loses. I have also spent years teaching — CBET practical courses, staff training on Microsoft 365, cybersecurity and data protection — which is how I learnt to explain a technical finding to somebody who does not want the technical version.</p>
         <p>I am looking for work where both halves matter: the infrastructure and the numbers coming out of it. If that is the shape of the problem on your desk, get in touch.</p>
       </div>
@@ -460,7 +504,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
         <dt><i class="fa-solid fa-briefcase"></i>Current role</dt>
         <dd>ICT &amp; Communications Officer, The Institute for Social Accountability (TISA)</dd>
         <dt><i class="fa-solid fa-bullseye"></i>Focus areas</dt>
-        <dd>Data analysis, dashboards, AI, systems analysis</dd>
+        <dd>Data analysis, Power BI &amp; business intelligence, AI, systems analysis</dd>
         <dt><i class="fa-solid fa-graduation-cap"></i>Education</dt>
         <dd>BSc Information Technology, South Eastern Kenya University</dd>
         <dt><i class="fa-solid fa-phone"></i>Phone</dt>
@@ -485,7 +529,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
       <div class="app-item rv">
         <span class="ico"><i class="fa-solid fa-broom"></i></span>
         <h4>Fix the data before trusting it</h4>
-        <p>Duplicate records, inconsistent dates, manual entry drift. I clean and validate in Python so the same numbers come out every time, and document the steps so somebody else can repeat them.</p>
+        <p>Duplicate records, inconsistent dates, manual entry drift. I clean and validate in Python and Power Query so the same numbers come out every time, and document the steps so somebody else can repeat them.</p>
       </div>
       <div class="app-item rv">
         <span class="ico"><i class="fa-solid fa-book-open"></i></span>
@@ -501,17 +545,52 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
   <div class="wrap">
     <div class="sec-head rv">
       <h2><i class="fa-solid fa-screwdriver-wrench"></i>Skills</h2>
-      <p>Everything I work with, grouped by the part of the job it belongs to. Data and analytics first, since that is where I am heading.</p>
+      <p>Everything I work with, grouped by the part of the job it belongs to. Business intelligence and data first, since that is where I am heading.</p>
     </div>
 
     <div class="panel">
+
+      <div class="bay feature rv">
+        <h3><span class="ico"><i class="fa-solid fa-chart-column"></i></span>Business intelligence with Microsoft Power BI <span class="flag">Latest: Hotel Business Dashboard</span></h3>
+        <p class="blurb">End-to-end Power BI work — from agreeing the KPIs with the business, through Power Query and DAX, to an interactive, published dashboard that people can explore for themselves.</p>
+        <div class="feature-grid">
+          <div>
+            <h5><i class="fa-solid fa-clipboard-list"></i>Requirements &amp; KPIs</h5>
+            <ul class="ports">
+              <li>Business requirements</li><li>Stakeholder expectations</li><li>KPI definition</li><li>Metric design</li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-filter"></i>Data prep &amp; modelling</h5>
+            <ul class="ports">
+              <li>Data loading</li><li>Power Query</li><li>Data transformation</li><li>Data cleaning</li><li>Data modelling</li><li>Table relationships</li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-calculator"></i>DAX</h5>
+            <ul class="ports">
+              <li>DAX measures</li><li>Calculated columns</li><li>Business metrics</li><li>Time-based comparisons</li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-display"></i>Visualisation &amp; publishing</h5>
+            <ul class="ports">
+              <li>Interactive dashboards</li><li>KPI cards</li><li>Charts &amp; tables</li><li>Slicers &amp; filters</li><li>Report design</li><li>.pbix project files</li><li>Publishing dashboards</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feature-proof">
+          <span><i class="fa-solid fa-hotel"></i>&nbsp; Applied in my Hotel Business Dashboard project</span>
+          <a href="#hotel-dashboard">See the project <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+      </div>
 
       <div class="bay rv">
         <h3><span class="ico"><i class="fa-solid fa-chart-pie"></i></span>Data, analytics &amp; AI</h3>
         <p class="blurb">Cleaning, analysing and modelling organisational data, then building the dashboards and reports that decisions get made from.</p>
         <ul class="ports">
           <li>Data analysis in Python</li><li>pandas</li><li>NumPy</li><li>Matplotlib</li>
-          <li>Dashboard creation</li><li>Power BI</li><li>Data visualisation</li>
+          <li>Dashboard creation</li><li>Data visualisation</li>
           <li>SQL analytics</li><li>SPSS</li><li>Statistical analysis &amp; modelling</li>
           <li>Microsoft Excel (advanced)</li><li>Google Sheets</li>
           <li>Data cleaning &amp; preparation</li><li>Web scraping</li><li>Exploratory data analysis</li>
@@ -604,8 +683,9 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
         <h3><span class="ico"><i class="fa-solid fa-toolbox"></i></span>Tools &amp; platforms</h3>
         <p class="blurb">The modelling, documentation and project tools I use to plan work and keep it legible.</p>
         <ul class="ports">
+          <li>Microsoft Power BI Desktop</li><li>Power Query Editor</li>
           <li>Microsoft Visio</li><li>Draw.io</li><li>Lucidchart</li><li>Figma</li>
-          <li>Microsoft Project</li><li>Jira</li><li>Power BI</li><li>Postman</li>
+          <li>Microsoft Project</li><li>Jira</li><li>Postman</li>
           <li>Git / GitHub</li><li>Kaggle</li><li>Google Colab</li><li>Microsoft 365</li>
           <li>SEO tooling</li><li>Scratch Junior</li><li>Google Project Management</li><li>Google UX Design</li>
         </ul>
@@ -770,6 +850,56 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
     <p class="count" id="count" aria-live="polite"></p>
 
     <div id="project-list">
+
+      <!-- NEW: Power BI Hotel Business Dashboard -->
+      <article class="project featured rv" data-cat="data" id="hotel-dashboard">
+        <div class="p-side">
+          <span class="badge bi"><i class="fa-solid fa-chart-column"></i>Power BI</span><span class="new">NEW</span>
+          <div class="year">2026</div>
+          <div class="kind">Business intelligence</div>
+          <div class="stack">Power BI Desktop · Power Query · DAX</div>
+        </div>
+        <div>
+          <h3>Hotel Business Dashboard — Power BI data analytics</h3>
+
+          <figure class="shot">
+            <img src="hotel-dashboard.png" alt="Screenshot of the Hotel Business Dashboard built in Power BI, showing KPI cards, charts and slicers" loading="lazy">
+            <figcaption>The finished dashboard — KPI cards, charts, tables and slicers on one interactive page.</figcaption>
+          </figure>
+
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>A hotel business generates plenty of raw operational data, but in that form it cannot tell management how the business is performing or where to act. The brief was to turn it into an interactive dashboard built around the KPIs the client actually cares about.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Worked through the full Power BI workflow as a real-world business scenario, from requirements to a published, portfolio-ready report:</dd>
+          </dl>
+
+          <p class="pipeline-label"><i class="fa-solid fa-route"></i>The workflow</p>
+          <ol class="pipeline">
+            <li><strong>Business requirements</strong>Identified the hotel's needs, client expectations and the KPIs the dashboard had to answer.</li>
+            <li><strong>Data loading</strong>Imported the relevant hotel datasets into Power BI for analysis.</li>
+            <li><strong>Data transformation</strong>Cleaned, organised and prepared the data in Power Query for accurate reporting.</li>
+            <li><strong>DAX measures</strong>Built the calculations and business metrics with Data Analysis Expressions.</li>
+            <li><strong>Dashboard visualisation</strong>Designed interactive views with charts, tables, KPI cards and slicers.</li>
+            <li><strong>Project publication</strong>Prepared the .pbix project file and published the dashboard to my portfolio.</li>
+          </ol>
+
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>An interactive dashboard that turns raw hotel data into KPI-level insight a manager can filter and explore without asking for a new report — and a reusable Power BI workflow I now apply to organisational data.</dd>
+          </dl>
+
+          <p class="takeaway">Data analytics goes beyond creating charts. It is about understanding business problems, preparing reliable data, building meaningful measures, and presenting insights that drive better decisions.</p>
+
+          <ul class="tags">
+            <li>Power BI</li><li>Power Query</li><li>DAX</li><li>Data modelling</li><li>KPIs</li><li>Data visualisation</li><li>Business intelligence</li><li>Hotel analytics</li>
+          </ul>
+          <div class="p-links">
+            <a class="p-link" href="#contact">Request the .pbix file or a walkthrough<i class="fa-solid fa-arrow-right"></i></a>
+            <a class="p-link" href="https://www.linkedin.com/in/felix-mumo-itofficer254" target="_blank" rel="noopener">Read the post on LinkedIn<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
 
       <article class="project rv" data-cat="data">
         <div class="p-side">
@@ -1089,13 +1219,20 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
   <div class="wrap">
     <div class="sec-head rv">
       <h2><i class="fa-solid fa-graduation-cap"></i>Education &amp; certifications</h2>
-      <p>Formal training, and the certifications I have added since — weighted towards data protection, security and delivery.</p>
+      <p>Formal training, and the certifications I have added since — weighted towards data protection, security, delivery and, most recently, business intelligence.</p>
     </div>
 
     <div class="cred-grid">
       <div class="cred rv">
-        <h3><i class="fa-solid fa-user-graduate"></i>Education</h3>
-        <p>Degree and digital literacy certification.</p>
+        <h3><i class="fa-solid fa-user-graduate"></i>Education &amp; training</h3>
+        <p>Degree, digital literacy certification and recent analytics training.</p>
+        <div class="cred-item">
+          <i class="fa-solid fa-chart-column"></i>
+          <div>
+            <strong>Power BI Data Analytics — Hotel Business Dashboard module</strong>
+            <span>2026 — requirements &amp; KPIs, data loading, Power Query transformation, DAX measures, dashboard design and publication</span>
+          </div>
+        </div>
         <div class="cred-item">
           <i class="fa-solid fa-award"></i>
           <div>
@@ -1143,7 +1280,7 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
 <section id="contact">
   <div class="wrap">
     <h2 class="rv">Let's turn your systems, and the data inside them, into something useful.</h2>
-    <p class="lead rv">Available for ICT officer roles, data analysis and dashboard work, systems analysis and integration projects in Nairobi and across Kenya.</p>
+    <p class="lead rv">Available for ICT officer roles, data analysis and Power BI dashboard work, systems analysis and integration projects in Nairobi and across Kenya.</p>
     <p class="avail rv"><span class="dot" aria-hidden="true"></span>Currently open to new opportunities — I reply within a day.</p>
     <div class="contact-rows rv">
       <a class="crow" href="tel:+254710557540">
@@ -1212,6 +1349,13 @@ footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px s
   function missing(){ portrait.classList.add('is-missing'); }
   photo.addEventListener('error', missing);
   if (photo.complete && photo.naturalWidth === 0) missing();
+
+  // Project screenshots: hide the frame if the image hasn't been uploaded yet
+  document.querySelectorAll('.shot img').forEach(function (img) {
+    function hide(){ img.closest('.shot').hidden = true; }
+    img.addEventListener('error', hide);
+    if (img.complete && img.naturalWidth === 0) hide();
+  });
 
   // Year
   document.getElementById('yr').textContent = new Date().getFullYear();
