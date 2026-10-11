@@ -1,1 +1,1479 @@
-cccc
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Felix Musyoka Mumo — ICT Officer | Data, Power BI Dashboards &amp; Systems</title>
+<meta name="description" content="Felix Musyoka Mumo — ICT Officer in Nairobi. Systems analysis, ICT infrastructure, data analysis in Python, and Power BI dashboard development with Power Query and DAX for evidence-based decisions.">
+<meta name="author" content="Felix Musyoka Mumo">
+<meta property="og:title" content="Felix Musyoka Mumo — ICT Officer | Data, Power BI Dashboards &amp; Systems">
+<meta property="og:description" content="Seven years running ICT systems, now focused on data analysis in Python and Power BI dashboard development.">
+<meta property="og:image" content="photo.jpg">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+<style>
+:root{
+  /* emerald family */
+  --deep:#0E3A2C;
+  --deep-2:#0A2D22;
+  --green:#1A6B4F;
+  --green-soft:#2E8C69;
+  --green-line:rgba(255,255,255,.14);
+  --mint:#A9C9B9;
+  --mint-dim:#8FB4A3;
+  /* light surfaces */
+  --paper:#F3F6F1;
+  --paper-2:#E7EDE5;
+  --ink:#12241D;
+  --body:#334740;
+  --muted:#5C7268;
+  --rule:#CDD9D0;
+  /* accent */
+  --amber:#E9A13B;
+  --amber-deep:#C07C1A;
+  --amber-pale:#FCF6E9;
+  --online:#4FB98A;
+  --pbi:#F2C811;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --wrap:1160px;
+  --ease:cubic-bezier(.22,.8,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-.022em;line-height:1.08}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:20px;top:12px;z-index:99;background:var(--amber);color:#1B1206;padding:10px 16px;font-weight:600}
+i.fa-solid,i.fa-brands,i.fa-regular{line-height:1}
+
+/* ---------- scroll progress ---------- */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--amber);z-index:80;transition:width .12s linear}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:60;background:var(--deep);border-bottom:1px solid var(--green-line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:66px}
+.mark{font-weight:800;font-size:15px;color:var(--paper);display:flex;align-items:center;gap:10px;text-decoration:none}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--online);flex:none;box-shadow:0 0 0 0 rgba(79,185,138,.55);animation:pulse 2.6s infinite}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(79,185,138,.5)}
+  70%{box-shadow:0 0 0 9px rgba(79,185,138,0)}
+  100%{box-shadow:0 0 0 0 rgba(79,185,138,0)}
+}
+.nav{display:flex;gap:22px}
+.nav a{color:var(--mint);text-decoration:none;font-size:14.5px;font-weight:500;padding:6px 0;position:relative;display:flex;align-items:center;gap:8px;transition:color .25s var(--ease)}
+.nav a i{font-size:12.5px;opacity:.7;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav a:hover,.nav a.current{color:#fff}
+.nav a:hover i{opacity:1;transform:translateY(-1px)}
+.nav a:hover::after,.nav a.current::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:1px solid rgba(255,255,255,.3);color:#fff;padding:9px 14px;font:inherit;font-size:14px;cursor:pointer;gap:8px;align-items:center;transition:background .25s var(--ease)}
+.burger:hover{background:rgba(255,255,255,.1)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--deep);color:var(--paper);padding:72px 0 0;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(900px 420px at 78% 12%,rgba(46,140,105,.28),transparent 62%);
+}
+.hero .wrap{position:relative}
+.hero-grid{display:grid;grid-template-columns:310px 1fr;gap:56px;align-items:center;padding-bottom:64px}
+.portrait{position:relative}
+.portrait img,.portrait .fallback{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid rgba(255,255,255,.18)}
+.portrait .fallback{display:none;align-items:center;justify-content:center;background:var(--green);color:rgba(255,255,255,.6);font-size:60px}
+.portrait.is-missing img{display:none}
+.portrait.is-missing .fallback{display:flex}
+.portrait::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:2px solid var(--amber);z-index:-1;transition:inset .5s var(--ease)}
+.portrait:hover::before{inset:22px -22px -22px 22px}
+.eyebrow{font-size:14px;color:var(--mint);margin:0 0 16px;font-weight:500;display:flex;align-items:center;gap:9px}
+h1{font-size:clamp(40px,6.4vw,74px);color:#fff}
+h1 .surname{display:block;color:var(--amber)}
+.role{font-family:var(--serif);font-size:clamp(19px,2.3vw,25px);font-weight:300;color:#D4E4DB;margin:22px 0 0;max-width:38ch;line-height:1.45}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.chip{border:1px solid rgba(255,255,255,.22);padding:8px 14px;font-size:14px;color:#D4E4DB;display:flex;align-items:center;gap:9px;transition:border-color .3s var(--ease),background .3s var(--ease)}
+.chip i{color:var(--amber);font-size:13px}
+.chip:hover{border-color:rgba(233,161,59,.6);background:rgba(233,161,59,.08)}
+.chip.live{border-color:rgba(79,185,138,.6)}
+.chip.live i{color:var(--online)}
+.chip.bi{border-color:rgba(242,200,17,.55)}
+.chip.bi i{color:var(--pbi)}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:13px 24px;font-size:15px;font-weight:600;
+  text-decoration:none;background:var(--amber);color:#1B1206;border:2px solid var(--amber);
+  transition:background .28s var(--ease),border-color .28s var(--ease),color .28s var(--ease),transform .28s var(--ease);
+}
+.btn:hover{background:var(--amber-deep);border-color:var(--amber-deep);color:#fff;transform:translateY(-2px)}
+.btn i{transition:transform .28s var(--ease)}
+.btn:hover i{transform:translateX(3px)}
+.btn.ghost{background:transparent;color:var(--paper);border-color:rgba(255,255,255,.35)}
+.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff}
+.btn.ghost:hover i{transform:translateY(2px)}
+
+/* ---------- results strip ---------- */
+.strip{border-top:1px solid var(--green-line);background:var(--deep-2);position:relative}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:0;max-width:none}
+.stat{padding:30px 34px;border-right:1px solid rgba(255,255,255,.1);transition:background .35s var(--ease)}
+.stat:last-child{border-right:0}
+.stat:hover{background:rgba(46,140,105,.16)}
+.stat .ico{color:var(--green-soft);font-size:17px;margin-bottom:14px;display:block}
+.stat b{display:block;font-size:35px;font-weight:800;color:var(--amber);letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:9px;font-size:14.5px;color:var(--mint-dim);max-width:25ch}
+.strip::after{content:"";display:block;height:8px;background:repeating-linear-gradient(90deg,var(--amber) 0 26px,var(--green-soft) 26px 52px,var(--online) 52px 78px,#14513C 78px 104px);opacity:.9}
+
+/* ---------- section shell ---------- */
+section{padding:90px 0}
+.sec-head{margin-bottom:46px;border-bottom:1px solid var(--rule);padding-bottom:18px}
+.sec-head h2{font-size:clamp(28px,4vw,42px);display:flex;align-items:center;gap:16px}
+.sec-head h2 i{font-size:.62em;color:var(--green-soft)}
+.sec-head p{margin:12px 0 0;color:var(--muted);max-width:62ch;font-size:16.5px}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:56px}
+.about-body p{font-family:var(--serif);font-size:19.5px;line-height:1.74;font-weight:300;max-width:63ch;margin:0 0 20px;color:#213029}
+.about-body p strong{font-weight:400;color:var(--green);font-style:italic}
+.facts{border-left:3px solid var(--amber);padding-left:22px;margin:0}
+.facts dt{font-size:13.5px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:8px}
+.facts dt i{color:var(--green-soft);font-size:12px;width:14px}
+.facts dd{margin:4px 0 20px 22px;font-size:16.5px;font-weight:600;word-break:break-word}
+.facts dd a{text-decoration:none;border-bottom:1px solid var(--rule);transition:border-color .25s var(--ease),color .25s var(--ease)}
+.facts dd a:hover{border-bottom-color:var(--amber);color:var(--green)}
+.approach{margin-top:70px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.app-item{background:var(--paper);padding:32px 28px;transition:background .35s var(--ease),transform .35s var(--ease)}
+.app-item:hover{background:#fff;transform:translateY(-3px)}
+.app-item .ico{width:44px;height:44px;display:grid;place-items:center;background:var(--green);color:#fff;font-size:17px;margin-bottom:18px;transition:background .35s var(--ease)}
+.app-item:nth-child(2) .ico{background:var(--amber);color:#1B1206}
+.app-item:nth-child(3) .ico{background:var(--green-soft)}
+.app-item h4{font-size:18px;margin-bottom:12px}
+.app-item p{margin:0;color:var(--body);font-size:16px}
+
+/* ---------- skills ---------- */
+#skills{background:var(--deep);color:var(--paper)}
+#skills .sec-head{border-bottom-color:rgba(255,255,255,.18)}
+#skills .sec-head h2 i{color:var(--amber)}
+#skills .sec-head p{color:var(--mint-dim)}
+.panel{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--green-line);border:1px solid var(--green-line)}
+.bay{background:var(--deep);padding:32px 30px;transition:background .4s var(--ease)}
+.bay:hover{background:#11402F}
+.bay h3{font-size:18.5px;color:#fff;display:flex;align-items:center;gap:14px}
+.bay h3 .ico{width:38px;height:38px;display:grid;place-items:center;background:var(--amber);color:#1B1206;font-size:15px;flex:none;transition:transform .4s var(--ease)}
+.bay:nth-child(3) h3 .ico{background:var(--online);color:#08281C}
+.bay:nth-child(4) h3 .ico{background:#5AA9E6;color:#06263B}
+.bay:nth-child(5) h3 .ico{background:#7FC4AE;color:#08281C}
+.bay:nth-child(6) h3 .ico{background:#D98A5E;color:#2B1408}
+.bay:nth-child(7) h3 .ico{background:#9B8BD6;color:#1A1436}
+.bay:nth-child(8) h3 .ico{background:#6FC2B0;color:#06291F}
+.bay:nth-child(9) h3 .ico{background:#E8C05A;color:#2B2108}
+.bay:hover h3 .ico{transform:rotate(-6deg) scale(1.06)}
+.bay .blurb{margin:14px 0 20px;font-size:15.5px;color:var(--mint-dim);max-width:48ch;font-family:var(--serif);font-weight:300;line-height:1.6}
+.ports{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
+.ports li{
+  border:1px solid rgba(255,255,255,.2);padding:7px 12px;font-size:14.5px;color:#D4E4DB;
+  background:rgba(255,255,255,.04);transition:border-color .25s var(--ease),background .25s var(--ease),transform .25s var(--ease);
+}
+.ports li:hover{border-color:var(--amber);background:rgba(233,161,59,.14);transform:translateY(-2px)}
+
+/* featured Power BI bay */
+.bay.feature{grid-column:1/-1;background:linear-gradient(135deg,#0F4232 0%,var(--deep) 60%);border-top:3px solid var(--pbi)}
+.bay.feature:hover{background:linear-gradient(135deg,#124A38 0%,#11402F 60%)}
+.bay.feature h3{font-size:21px}
+.bay.feature h3 .ico{background:var(--pbi);color:#2B2108}
+.bay.feature .flag{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--pbi);border:1px solid rgba(242,200,17,.5);padding:4px 10px;letter-spacing:0}
+.bay.feature .blurb{max-width:72ch}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.feature-grid h5{margin:0 0 12px;font-size:13.5px;font-weight:600;color:var(--pbi);display:flex;align-items:center;gap:8px}
+.feature-grid h5 i{font-size:12px}
+.feature-grid .ports li:hover{border-color:var(--pbi);background:rgba(242,200,17,.12)}
+.feature-proof{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:15px;color:var(--mint-dim);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.feature-proof a{color:#fff;font-weight:600;text-decoration:none;border-bottom:2px solid var(--pbi);display:inline-flex;align-items:center;gap:8px}
+.feature-proof a:hover{color:var(--pbi)}
+
+/* ---------- experience ---------- */
+#experience{background:var(--paper)}
+.job{display:grid;grid-template-columns:250px 1fr;gap:36px;padding:36px 0;border-top:1px solid var(--rule)}
+.job:last-of-type{border-bottom:1px solid var(--rule)}
+.job .when{font-size:15px;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:9px}
+.job .when i{color:var(--amber)}
+.job .where{font-size:15.5px;color:var(--green);font-weight:600;margin-top:8px;line-height:1.4;display:flex;gap:9px}
+.job .where i{color:var(--green-soft);margin-top:4px;flex:none}
+.job .tenure{font-size:14px;color:var(--muted);margin-top:9px}
+.job h3{font-size:23px;margin-bottom:8px}
+.job .summary{font-family:var(--serif);font-weight:300;font-size:18px;color:#213029;margin:0 0 18px;max-width:64ch;line-height:1.65}
+.job h4{font-size:14.5px;font-weight:600;color:var(--muted);margin:22px 0 10px;display:flex;align-items:center;gap:9px}
+.job h4 i{color:var(--green-soft);font-size:13px}
+.job ul{margin:0;padding-left:20px;color:var(--body);max-width:68ch}
+.job li{margin-bottom:8px}
+.job li::marker{color:var(--amber)}
+
+/* ---------- projects ---------- */
+#projects{background:var(--paper-2)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.filters button{
+  font:inherit;font-size:14.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:9px;
+  background:var(--paper);border:1px solid var(--rule);color:var(--muted);padding:9px 16px;
+  transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease),transform .25s var(--ease);
+}
+.filters button i{font-size:12.5px}
+.filters button:hover{border-color:var(--green-soft);color:var(--green);transform:translateY(-2px)}
+.filters button[aria-pressed="true"]{background:var(--deep);border-color:var(--deep);color:#fff}
+.filters button[aria-pressed="true"] i{color:var(--amber)}
+.count{font-size:14.5px;color:var(--muted);margin:16px 0 0}
+.project{display:grid;grid-template-columns:210px 1fr;gap:36px;padding:38px 0;border-top:1px solid var(--rule)}
+.project:last-of-type{border-bottom:1px solid var(--rule)}
+.project[hidden]{display:none}
+.project.flash{animation:fadeIn .45s var(--ease)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.p-side .badge{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;font-size:13px;font-weight:600;padding:7px 12px}
+.p-side .badge.bi{background:var(--pbi);color:#2B2108}
+.p-side .new{display:inline-block;margin-left:6px;font-size:12px;font-weight:700;color:var(--amber-deep);border:1px solid var(--amber);padding:5px 8px;vertical-align:top}
+.p-side .year{font-size:15px;color:var(--muted);font-weight:600;margin-top:14px}
+.p-side .kind{font-size:14px;color:var(--green);margin-top:5px;font-weight:600}
+.p-side .stack{font-size:14px;color:var(--muted);margin-top:14px;line-height:1.5}
+.project h3{font-size:25px;margin-bottom:14px}
+.detail{margin:0 0 16px;max-width:66ch}
+.detail dt{font-size:13.5px;font-weight:700;color:var(--green);margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.detail dt i{font-size:12px;color:var(--amber)}
+.detail dd{margin:0 0 14px;color:var(--body)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-size:13.5px;border:1px solid var(--rule);background:var(--paper);padding:5px 11px;color:var(--muted);transition:border-color .25s var(--ease),color .25s var(--ease)}
+.tags li:hover{border-color:var(--green-soft);color:var(--green)}
+.p-link{
+  display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-weight:600;font-size:15px;
+  color:var(--green);text-decoration:none;border-bottom:2px solid var(--amber);padding-bottom:3px;
+  transition:color .25s var(--ease);
+}
+.p-link i{transition:transform .28s var(--ease)}
+.p-link:hover{color:var(--amber-deep)}
+.p-link:hover i{transform:translateX(4px)}
+.p-links{display:flex;flex-wrap:wrap;gap:8px 26px}
+
+/* featured project extras */
+.project.featured{background:linear-gradient(180deg,rgba(242,200,17,.07),transparent 70%);padding-left:22px;padding-right:22px;margin:0 -22px;border-left:3px solid var(--pbi)}
+.pipeline-label{font-size:13.5px;font-weight:700;color:var(--green);margin:4px 0 10px;display:flex;align-items:center;gap:8px}
+.pipeline-label i{font-size:12px;color:var(--amber)}
+.pipeline{list-style:none;margin:0 0 20px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);counter-reset:step;max-width:760px}
+.pipeline li{background:var(--paper);padding:14px 16px;font-size:14.5px;color:var(--body);counter-increment:step;line-height:1.5;transition:background .25s var(--ease)}
+.pipeline li:hover{background:#fff}
+.pipeline li strong{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
+.pipeline li strong::before{content:counter(step,decimal-leading-zero);color:var(--amber-deep);margin-right:9px;font-variant-numeric:tabular-nums}
+.takeaway{border-left:3px solid var(--amber);margin:0 0 18px;padding:2px 0 2px 16px;font-family:var(--serif);font-style:italic;font-weight:300;font-size:18.5px;line-height:1.6;color:#213029;max-width:62ch}
+
+.empty{padding:40px 0;color:var(--muted)}
+.sub{margin-top:60px}
+.sub h3{font-size:21px;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.sub h3 i{color:var(--green-soft);font-size:.8em}
+.sub .lead{color:var(--muted);margin:0 0 20px;max-width:60ch;font-size:16px}
+.sites{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.site{background:var(--paper);padding:24px 26px;text-decoration:none;display:block;transition:background .3s var(--ease),transform .3s var(--ease)}
+.site strong{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:17.5px;font-weight:600}
+.site strong i{color:var(--green-soft);font-size:14px;transition:transform .3s var(--ease)}
+.site .host{font-size:14px;color:var(--muted);margin-top:4px}
+.site .what{font-size:15px;color:var(--body);margin-top:12px}
+.site:hover{background:#fff;transform:translateY(-3px)}
+.site:hover strong i{transform:translate(3px,-3px)}
+.more{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.more li{background:var(--paper);padding:22px 24px;display:flex;gap:16px}
+.more li i{color:var(--green-soft);font-size:18px;margin-top:3px}
+.more strong{display:block;font-size:17px;font-weight:600;margin-bottom:5px}
+.more span{font-size:15px;color:var(--body)}
+.note{margin-top:38px;background:var(--amber-pale);border:1px dashed var(--amber);padding:18px 22px;font-size:15px;color:#5A4A2A;display:flex;gap:14px}
+.note i{color:var(--amber-deep);font-size:17px;margin-top:3px}
+.note code{background:#fff;padding:1px 5px;border:1px solid #E7DCC2}
+
+/* ---------- credentials ---------- */
+#credentials{background:var(--paper)}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.cred h3{font-size:21px;margin-bottom:8px;display:flex;align-items:center;gap:12px}
+.cred h3 i{color:var(--green-soft);font-size:.82em}
+.cred>p{color:var(--muted);font-size:15.5px;margin:0 0 14px}
+.cred-item{padding:17px 0;border-top:1px solid var(--rule);display:flex;gap:15px;transition:padding-left .3s var(--ease)}
+.cred-item:hover{padding-left:6px}
+.cred-item i{color:var(--amber);font-size:15px;margin-top:4px;flex:none}
+.cred-item strong{display:block;font-size:17px;font-weight:600}
+.cred-item span{font-size:14.5px;color:var(--muted)}
+.refs{margin-top:56px;background:var(--paper-2);border-left:3px solid var(--green);padding:24px 26px;max-width:62ch}
+.refs h3{font-size:18px;margin-bottom:10px;display:flex;align-items:center;gap:11px}
+.refs h3 i{color:var(--green-soft)}
+.refs p{margin:0;color:var(--body);font-size:16px}
+
+/* ---------- contact + footer ---------- */
+#contact{background:var(--green);color:#EAF3EE;padding-bottom:0;position:relative;overflow:hidden}
+#contact::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(760px 340px at 15% 0%,rgba(255,255,255,.1),transparent 60%)}
+#contact .wrap{position:relative}
+#contact h2{font-size:clamp(28px,4.6vw,46px);color:#fff;max-width:22ch}
+#contact .lead{font-family:var(--serif);font-weight:300;font-size:20.5px;color:#CDE5DA;max-width:54ch;margin:20px 0 20px}
+.avail{display:flex;align-items:center;gap:11px;font-size:15px;color:#CDE5DA;margin-bottom:34px}
+.contact-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.22)}
+.crow{background:var(--green);padding:24px 26px;text-decoration:none;display:flex;gap:18px;align-items:flex-start;transition:background .3s var(--ease)}
+.crow .ico{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.3);font-size:17px;color:#fff;flex:none;transition:background .3s var(--ease),transform .3s var(--ease)}
+.crow span{display:block;font-size:13.5px;color:#A6CBBC;margin-bottom:6px}
+.crow strong{display:block;font-size:18px;font-weight:600;color:#fff;word-break:break-word}
+.crow em{display:block;font-style:normal;font-size:14px;color:#A6CBBC;margin-top:6px}
+.crow:hover{background:var(--green-soft)}
+.crow:hover .ico{background:var(--amber);color:#1B1206;border-color:var(--amber);transform:translateY(-2px)}
+footer{background:var(--deep);color:var(--mint);margin-top:78px;border-top:8px solid var(--amber)}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;padding:32px 0}
+.foot .name{color:#fff;font-weight:800;font-size:18.5px;display:flex;align-items:center;gap:12px}
+.foot .name i{color:var(--amber);font-size:16px}
+.foot a{color:var(--mint);text-decoration:none;display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.25);transition:color .25s var(--ease),border-color .25s var(--ease)}
+.foot a:hover{color:#fff;border-bottom-color:var(--amber)}
+.foot a i{color:var(--amber)}
+.foot-links{display:flex;flex-wrap:wrap;gap:24px;font-size:15px}
+.copy{font-size:13.5px;color:var(--mint-dim);padding-bottom:28px;display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}
+.copy a{color:var(--mint-dim);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.18)}
+.copy a:hover{color:#fff}
+
+/* ---------- back to top ---------- */
+.totop{
+  position:fixed;right:24px;bottom:24px;z-index:70;width:48px;height:48px;
+  display:grid;place-items:center;background:var(--deep);color:#fff;border:1px solid rgba(255,255,255,.2);
+  text-decoration:none;opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:opacity .3s var(--ease),transform .3s var(--ease),background .3s var(--ease),visibility .3s;
+}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:var(--amber);color:#1B1206;border-color:var(--amber)}
+
+/* ---------- motion ---------- */
+.reveal{opacity:0;transform:translateY(16px);animation:rise .75s var(--ease) forwards}
+.reveal.d1{animation-delay:.08s}.reveal.d2{animation-delay:.18s}.reveal.d3{animation-delay:.28s}
+@keyframes rise{to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .reveal,.rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .strip .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .approach{grid-template-columns:1fr}
+  .sites{grid-template-columns:1fr}
+  .more{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:38px}
+  .portrait{max-width:280px}
+  .about-grid,.cred-grid{grid-template-columns:1fr;gap:40px}
+  .panel{grid-template-columns:1fr}
+  .project,.job{grid-template-columns:1fr;gap:16px}
+  .contact-rows{grid-template-columns:1fr}
+  .pipeline{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .burger{display:inline-flex}
+  .nav{
+    display:none;position:absolute;top:66px;left:0;right:0;background:var(--deep-2);
+    flex-direction:column;gap:0;padding:8px 28px 18px;border-bottom:1px solid var(--green-line);
+  }
+  .nav.open{display:flex;animation:fadeIn .3s var(--ease)}
+  .nav a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav a::after{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  section{padding:64px 0}
+  .stat{padding:24px 20px}
+  .stat b{font-size:30px}
+  .about-body p{font-size:18px}
+  .totop{right:16px;bottom:16px}
+  .feature-grid,.pipeline{grid-template-columns:1fr}
+  .bay.feature h3{flex-wrap:wrap}
+  .bay.feature .flag{margin-left:0}
+  .project.featured{margin:0 -20px;padding-left:17px;padding-right:20px}
+}
+@media print{
+  .topbar,.filters,.actions,.totop,.progress,.strip::after{display:none}
+  body{background:#fff;font-size:12pt}
+  .hero,#skills,#contact,footer{background:#fff;color:#000}
+  .project[hidden]{display:grid}
+  .rv{opacity:1;transform:none}
+}
+</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top"><span class="dot" aria-hidden="true"></span>Felix&nbsp;<span class="full">Musyoka&nbsp;</span>Mumo</a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav"><i class="fa-solid fa-bars"></i> Menu</button>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#about"><i class="fa-solid fa-user"></i>About</a>
+      <a href="#skills"><i class="fa-solid fa-screwdriver-wrench"></i>Skills</a>
+      <a href="#experience"><i class="fa-solid fa-briefcase"></i>Experience</a>
+      <a href="#projects"><i class="fa-solid fa-folder-open"></i>Projects</a>
+      <a href="#credentials"><i class="fa-solid fa-graduation-cap"></i>Credentials</a>
+      <a href="#contact"><i class="fa-solid fa-paper-plane"></i>Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="portrait reveal" id="portrait">
+      <img src="photo.jpg" alt="Felix Musyoka Mumo" id="photo">
+      <div class="fallback" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></div>
+    </div>
+    <div>
+      <p class="eyebrow reveal d1"><i class="fa-solid fa-location-dot"></i>ICT Officer — Kasarani, Nairobi</p>
+      <h1 class="reveal d1">Felix Musyoka<span class="surname">Mumo</span></h1>
+      <p class="role reveal d2">I run ICT systems end to end, then turn the data they produce into dashboards people actually make decisions with.</p>
+      <div class="hero-meta reveal d2">
+        <span class="chip live"><i class="fa-solid fa-circle-check"></i>Open to data &amp; AI roles</span>
+        <span class="chip bi"><i class="fa-solid fa-chart-column"></i>Power BI · DAX · Power Query</span>
+        <span class="chip"><i class="fa-brands fa-python"></i>Data analysis in Python</span>
+        <span class="chip"><i class="fa-solid fa-chart-line"></i>Dashboard development</span>
+        <span class="chip"><i class="fa-solid fa-sitemap"></i>Systems analysis</span>
+        <span class="chip"><i class="fa-solid fa-network-wired"></i>ICT infrastructure</span>
+      </div>
+      <div class="actions reveal d3">
+        <a class="btn" href="#projects"><i class="fa-solid fa-arrow-right"></i>See my work</a>
+        <a class="btn ghost" href="Felix_Mumo_CV.pdf" download><i class="fa-solid fa-download"></i>Download CV</a>
+        <a class="btn ghost" href="tel:+254710557540"><i class="fa-solid fa-phone"></i>Call 0710 557 540</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div class="stat">
+        <span class="ico"><i class="fa-solid fa-calendar-check"></i></span>
+        <b data-count="7" data-suffix="+">0</b>
+        <span>Years running ICT systems across NGO and education settings</span>
+      </div>
+      <div class="stat">
+        <span class="ico"><i class="fa-solid fa-tower-broadcast"></i></span>
+        <b data-count="99" data-suffix="%">0</b>
+        <span>Network availability sustained across a multi-campus institution</span>
+      </div>
+      <div class="stat">
+        <span class="ico"><i class="fa-solid fa-cubes"></i></span>
+        <b data-count="16" data-suffix="">0</b>
+        <span>Systems, dashboards, notebooks and websites designed, built or deployed</span>
+      </div>
+      <div class="stat">
+        <span class="ico"><i class="fa-solid fa-certificate"></i></span>
+        <b data-count="7" data-suffix="">0</b>
+        <span>Professional certifications in data protection, security and delivery</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2><i class="fa-solid fa-user"></i>About me</h2>
+      <p>Where I come from, what I'm good at, and the direction I'm taking my career.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-body rv">
+        <p>I am <strong>Felix Musyoka Mumo</strong>, an ICT Officer based in Kasarani, Nairobi, with a BSc in Information Technology from South Eastern Kenya University. For seven years I have carried the full ICT stack for institutions and non-profits — Microsoft 365 and Azure tenancies, networks and firewalls, servers and websites, endpoint security, CCTV and access control, backups, vendor contracts, and the users who depend on every part of it working.</p>
+        <p>That range is deliberate. Running infrastructure taught me how organisations actually behave: where records get entered badly, which processes people quietly work around, and why a report nobody trusts gets ignored. It is the reason I can walk into a messy system and know which questions to ask first.</p>
+        <p>My focus now is <strong>data and AI</strong>. The part of this work I keep returning to is what happens after a system is live — the records it accumulates. I analyse that data in Python with pandas and NumPy, model and visualise it, and build dashboards in Power BI that answer the questions management is actually asking. I have done this with M-Pesa transaction records, water billing and consumption data, and virtual campus revenue trends, turning raw logs into reporting that shaped real decisions.</p>
+        <p>In <strong>Power BI</strong> I work the whole path, not just the visuals: pinning down the business requirements and KPIs first, shaping the data in Power Query, building a clean data model, writing the DAX measures that carry the business logic, and designing interactive reports with slicers and drill-downs. My most recent build is a Hotel Business Dashboard that takes raw booking data to KPI-level insight.</p>
+        <p>Underneath the analysis sits the discipline that makes it hold up: systems analysis and requirements gathering, database and ERD design, API integration, UAT, and documentation habits that make an analysis reproducible rather than a one-off spreadsheet somebody loses. I have also spent years teaching — CBET practical courses, staff training on Microsoft 365, cybersecurity and data protection — which is how I learnt to explain a technical finding to somebody who does not want the technical version.</p>
+        <p>I am looking for work where both halves matter: the infrastructure and the numbers coming out of it. If that is the shape of the problem on your desk, get in touch.</p>
+      </div>
+
+      <dl class="facts rv">
+        <dt><i class="fa-solid fa-location-dot"></i>Based in</dt>
+        <dd>Kasarani, Nairobi, Kenya</dd>
+        <dt><i class="fa-solid fa-briefcase"></i>Current role</dt>
+        <dd>ICT &amp; Communications Officer, The Institute for Social Accountability (TISA)</dd>
+        <dt><i class="fa-solid fa-bullseye"></i>Focus areas</dt>
+        <dd>Data analysis, Power BI &amp; business intelligence, AI, systems analysis</dd>
+        <dt><i class="fa-solid fa-graduation-cap"></i>Education</dt>
+        <dd>BSc Information Technology, South Eastern Kenya University</dd>
+        <dt><i class="fa-solid fa-phone"></i>Phone</dt>
+        <dd><a href="tel:+254710557540">0710 557 540</a></dd>
+        <dt><i class="fa-solid fa-envelope"></i>Email</dt>
+        <dd><a href="mailto:mumofelix235@gmail.com">mumofelix235@gmail.com</a></dd>
+        <dt><i class="fa-brands fa-github"></i>GitHub</dt>
+        <dd><a href="https://github.com/felixmumo" target="_blank" rel="noopener">github.com/felixmumo</a></dd>
+        <dt><i class="fa-brands fa-linkedin"></i>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/felix-mumo-itofficer254" target="_blank" rel="noopener">felix-mumo-itofficer254</a></dd>
+        <dt><i class="fa-solid fa-circle-check"></i>Availability</dt>
+        <dd>Open to full-time roles and contract work</dd>
+      </dl>
+    </div>
+
+    <div class="approach">
+      <div class="app-item rv">
+        <span class="ico"><i class="fa-solid fa-circle-question"></i></span>
+        <h4>Start with the question, not the tool</h4>
+        <p>Before writing a query or opening Power BI, I find out what decision the report is meant to support and who has to defend it. Most dashboards fail because nobody asked that first.</p>
+      </div>
+      <div class="app-item rv">
+        <span class="ico"><i class="fa-solid fa-broom"></i></span>
+        <h4>Fix the data before trusting it</h4>
+        <p>Duplicate records, inconsistent dates, manual entry drift. I clean and validate in Python and Power Query so the same numbers come out every time, and document the steps so somebody else can repeat them.</p>
+      </div>
+      <div class="app-item rv">
+        <span class="ico"><i class="fa-solid fa-book-open"></i></span>
+        <h4>Leave it documented</h4>
+        <p>Every system I hand over comes with user manuals, technical documentation and, where it helps, video walkthroughs. Good support is measured by how rarely the same problem returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2><i class="fa-solid fa-screwdriver-wrench"></i>Skills</h2>
+      <p>Everything I work with, grouped by the part of the job it belongs to. Business intelligence and data first, since that is where I am heading.</p>
+    </div>
+
+    <div class="panel">
+
+      <div class="bay feature rv">
+        <h3><span class="ico"><i class="fa-solid fa-chart-column"></i></span>Business intelligence with Microsoft Power BI <span class="flag">Latest: Hotel Business Dashboard</span></h3>
+        <p class="blurb">End-to-end Power BI work — from agreeing the KPIs with the business, through Power Query and DAX, to an interactive, published dashboard that people can explore for themselves.</p>
+        <div class="feature-grid">
+          <div>
+            <h5><i class="fa-solid fa-clipboard-list"></i>Requirements &amp; KPIs</h5>
+            <ul class="ports">
+              <li>Business requirements</li><li>Stakeholder expectations</li><li>KPI definition</li><li>Metric design</li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-filter"></i>Data prep &amp; modelling</h5>
+            <ul class="ports">
+              <li>Data loading</li><li>Power Query</li><li>Data transformation</li><li>Data cleaning</li><li>Data modelling</li><li>Table relationships</li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-calculator"></i>DAX</h5>
+            <ul class="ports">
+              <li>DAX measures</li><li>Calculated columns</li><li>Business metrics</li><li>Time-based comparisons</li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-display"></i>Visualisation &amp; publishing</h5>
+            <ul class="ports">
+              <li>Interactive dashboards</li><li>KPI cards</li><li>Charts &amp; tables</li><li>Slicers &amp; filters</li><li>Report design</li><li>.pbix project files</li><li>Publishing dashboards</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feature-proof">
+          <span><i class="fa-solid fa-hotel"></i>&nbsp; Applied in my Hotel Business Dashboard project</span>
+          <a href="#hotel-dashboard">See the project <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-chart-pie"></i></span>Data, analytics &amp; AI</h3>
+        <p class="blurb">Cleaning, analysing and modelling organisational data, then building the dashboards and reports that decisions get made from.</p>
+        <ul class="ports">
+          <li>Data analysis in Python</li><li>pandas</li><li>NumPy</li><li>Matplotlib</li>
+          <li>Dashboard creation</li><li>Data visualisation</li>
+          <li>SQL analytics</li><li>SPSS</li><li>Statistical analysis &amp; modelling</li>
+          <li>Microsoft Excel (advanced)</li><li>Google Sheets</li>
+          <li>Data cleaning &amp; preparation</li><li>Web scraping</li><li>Exploratory data analysis</li>
+          <li>Reporting automation</li><li>KPI &amp; metric design</li>
+          <li>Data governance &amp; accuracy</li><li>Data-driven decision making</li>
+          <li>Analytical communication &amp; presentation</li>
+        </ul>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-sitemap"></i></span>Systems analysis &amp; design</h3>
+        <p class="blurb">Translating what a business needs into specifications a developer can build and a user will accept.</p>
+        <ul class="ports">
+          <li>Requirements gathering</li><li>Requirements elicitation</li><li>Stakeholder consultation</li>
+          <li>Business process analysis</li><li>Gap analysis</li><li>Feasibility assessment</li>
+          <li>System design</li><li>Software Requirements Specifications (SRS)</li>
+          <li>Functional Requirements Specifications (FRS)</li><li>Use cases</li>
+          <li>Process flow diagrams</li><li>Data flow diagrams</li><li>Data models</li>
+          <li>Entity-relationship diagrams (ERDs)</li><li>System architecture documentation</li>
+          <li>Test cases</li><li>User acceptance testing (UAT)</li><li>Change management</li>
+          <li>User manuals &amp; technical documentation</li>
+        </ul>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-code"></i></span>Development &amp; integration</h3>
+        <p class="blurb">Building the systems themselves, and connecting them to the services Kenyan businesses actually run on.</p>
+        <ul class="ports">
+          <li>Python</li><li>SQL / MySQL</li><li>PHP</li><li>JavaScript</li><li>Node.js</li>
+          <li>React</li><li>HTML</li><li>CSS</li><li>WordPress</li>
+          <li>Database design</li><li>REST APIs</li><li>API integration</li>
+          <li>M-Pesa Daraja API</li><li>STK Push payment gateways</li>
+          <li>Postman</li><li>Git &amp; GitHub</li><li>System testing</li><li>Systems enhancement</li>
+        </ul>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-cloud"></i></span>Cloud &amp; systems administration</h3>
+        <p class="blurb">Running the environments organisations live in day to day, and keeping them available.</p>
+        <ul class="ports">
+          <li>Microsoft 365 administration</li><li>Microsoft Azure</li>
+          <li>User identities &amp; access controls</li><li>Licence management</li>
+          <li>SharePoint administration</li><li>Teams &amp; OneDrive</li><li>Email administration</li>
+          <li>cPanel</li><li>Web server administration</li><li>Hosting environments</li>
+          <li>Domains &amp; DNS configuration</li><li>SSL certificate management</li>
+          <li>Moodle deployment &amp; customisation</li><li>System &amp; infrastructure monitoring</li>
+        </ul>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-network-wired"></i></span>Networks &amp; infrastructure</h3>
+        <p class="blurb">The physical and network layer — routers, switches, wireless, surveillance and access control.</p>
+        <ul class="ports">
+          <li>Network administration</li><li>Routers &amp; switches</li>
+          <li>Wireless networks &amp; access points</li><li>Firewall configuration</li>
+          <li>Internet connectivity management</li><li>Network security</li>
+          <li>Bandwidth &amp; performance monitoring</li><li>Network troubleshooting</li>
+          <li>CCTV surveillance systems</li><li>Biometric &amp; door access control</li>
+          <li>Preventive maintenance</li>
+        </ul>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-shield-halved"></i></span>Cybersecurity &amp; data protection</h3>
+        <p class="blurb">Protecting endpoints, data and users, and meeting Kenya's data protection obligations.</p>
+        <ul class="ports">
+          <li>Bitdefender GravityZone</li><li>Endpoint protection</li><li>Security policy management</li>
+          <li>Incident response</li><li>Ethical hacking (Cisco)</li><li>Cyber security analysis</li>
+          <li>Web security</li><li>Secure login policies</li><li>Antivirus administration</li>
+          <li>Backup &amp; disaster recovery</li><li>Data protection &amp; ODPC compliance</li>
+          <li>Compliance documentation</li><li>Cybersecurity awareness training</li>
+        </ul>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-headset"></i></span>ICT support &amp; service management</h3>
+        <p class="blurb">Keeping users working, assets accounted for and vendors honest.</p>
+        <ul class="ports">
+          <li>ICT systems support</li><li>First-line &amp; help desk support</li>
+          <li>Hardware repair &amp; maintenance</li><li>Laptop servicing &amp; upgrades</li>
+          <li>ICT asset management</li><li>Equipment registers &amp; lifecycle tracking</li>
+          <li>Vendor management</li><li>Service Level Agreements (SLAs)</li>
+          <li>ITIL 4 fundamentals</li><li>Remote support (AnyDesk, TeamViewer)</li>
+          <li>Hiren's BootCD recovery</li><li>ICT procurement support</li>
+          <li>User training &amp; capacity building</li><li>Video tutorial creation</li>
+        </ul>
+      </div>
+
+      <div class="bay rv">
+        <h3><span class="ico"><i class="fa-solid fa-toolbox"></i></span>Tools &amp; platforms</h3>
+        <p class="blurb">The modelling, documentation and project tools I use to plan work and keep it legible.</p>
+        <ul class="ports">
+          <li>Microsoft Power BI Desktop</li><li>Power Query Editor</li>
+          <li>Microsoft Visio</li><li>Draw.io</li><li>Lucidchart</li><li>Figma</li>
+          <li>Microsoft Project</li><li>Jira</li><li>Postman</li>
+          <li>Git / GitHub</li><li>Kaggle</li><li>Google Colab</li><li>Microsoft 365</li>
+          <li>SEO tooling</li><li>Scratch Junior</li><li>Google Project Management</li><li>Google UX Design</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EXPERIENCE ===================== -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2><i class="fa-solid fa-briefcase"></i>Experience</h2>
+      <p>Seven years across a governance non-profit, two colleges and a multi-campus institution — every one of them with me as the person the systems belonged to.</p>
+    </div>
+
+    <article class="job rv">
+      <div>
+        <div class="when"><i class="fa-solid fa-calendar-days"></i>April 2026 — Present</div>
+        <div class="where"><i class="fa-solid fa-building"></i>The Institute for Social Accountability (TISA), Westlands, Nairobi</div>
+        <div class="tenure">Current role</div>
+      </div>
+      <div>
+        <h3>ICT &amp; Communications Officer</h3>
+        <p class="summary">Sole owner of ICT for a governance and accountability non-profit: cloud tenancy, network, security, websites, data protection compliance, and the reporting that management plans against.</p>
+
+        <h4><i class="fa-solid fa-chart-line"></i>Data &amp; reporting</h4>
+        <ul>
+          <li>Collect, analyse, visualise and interpret organisational data, producing reports and dashboards that support evidence-based decision-making.</li>
+          <li>Conduct systems analysis and requirements gathering to identify business needs and translate them into ICT solutions.</li>
+          <li>Design, develop, test, implement and enhance organisational systems against agreed specifications.</li>
+        </ul>
+
+        <h4><i class="fa-solid fa-cloud"></i>Cloud, security &amp; infrastructure</h4>
+        <ul>
+          <li>Administer Microsoft 365 — user accounts, licences, email, Teams, OneDrive and related cloud productivity services.</li>
+          <li>Manage Microsoft Azure environments, covering user identities, access controls and cloud resources.</li>
+          <li>Administer SharePoint sites, document libraries, permissions and collaboration platforms.</li>
+          <li>Run cloud and endpoint security through Bitdefender GravityZone — security policies, endpoint protection, monitoring and incident response.</li>
+          <li>Administer the network infrastructure: routers, switches, wireless, internet connectivity and network security.</li>
+          <li>Maintain CCTV surveillance and biometric door access control systems, including enrolment, permissions and troubleshooting.</li>
+          <li>Manage organisational backups end to end — schedules, storage, monitoring, recovery and restoration testing.</li>
+        </ul>
+
+        <h4><i class="fa-solid fa-globe"></i>Web &amp; digital presence</h4>
+        <ul>
+          <li>Develop and maintain organisational websites, covering content, functionality, security and performance.</li>
+          <li>Implement SEO strategies to improve visibility, search indexing and traffic.</li>
+          <li>Manage hosting, domains, DNS, databases, SSL certificates and renewals to keep services secure and available.</li>
+        </ul>
+
+        <h4><i class="fa-solid fa-scale-balanced"></i>Governance, assets &amp; people</h4>
+        <ul>
+          <li>Support data protection and ODPC compliance through security controls, data handling practices, access management and compliance documentation.</li>
+          <li>Manage ICT vendors and SLAs, including coordination, service monitoring, renewals and issue resolution.</li>
+          <li>Maintain the ICT asset register — registration, allocation, tracking, maintenance records and lifecycle management.</li>
+          <li>Service and maintain laptops and ICT equipment through preventive maintenance, upgrades and troubleshooting.</li>
+          <li>Run staff training on organisational systems, Microsoft 365, cybersecurity and data protection.</li>
+          <li>Produce user manuals, technical documentation and video tutorials, and provide remote support via AnyDesk and TeamViewer.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job rv">
+      <div>
+        <div class="when"><i class="fa-solid fa-calendar-days"></i>Oct 2023 — Mar 2026</div>
+        <div class="where"><i class="fa-solid fa-building-columns"></i>Nairobi Institute of Business Studies (NIBS)</div>
+        <div class="tenure">2 years 6 months</div>
+      </div>
+      <div>
+        <h3>eLearning System Administrator &amp; Computer Science Lecturer</h3>
+        <p class="summary">Ran the Virtual Campus platform and taught the practical ICT curriculum, while building the analytics that management used to track the campus commercially.</p>
+
+        <h4><i class="fa-solid fa-chart-column"></i>Analysis &amp; systems</h4>
+        <ul>
+          <li>Analysed revenue trends and performance metrics for the Virtual Campus to support strategic decision-making.</li>
+          <li>Developed and presented analytical reports and dashboards for operational and management use.</li>
+          <li>Supported deployment, configuration and maintenance of institutional systems and applications to ensure availability and usability.</li>
+          <li>Assisted in writing, testing, verifying and enhancing programs against defined specifications.</li>
+        </ul>
+
+        <h4><i class="fa-solid fa-headset"></i>Support &amp; administration</h4>
+        <ul>
+          <li>Provided first-line ICT support on applications, ERP systems, networks, websites and computer systems.</li>
+          <li>Installed, configured, repaired and maintained computer systems, ICT equipment and peripherals, monitoring performance to minimise downtime.</li>
+          <li>Managed ICT asset inventories and issuance registers, maintaining accountability of institutional equipment.</li>
+          <li>Managed user accounts and access controls to safeguard data and ensure appropriate system usage.</li>
+          <li>Documented ICT procedures and supported routine and annual maintenance plans, plus technical input into procurement.</li>
+          <li>Managed the Digital Portfolio of Evidence for eLearning students, and produced user manuals and video tutorials.</li>
+        </ul>
+
+        <h4><i class="fa-solid fa-chalkboard-user"></i>Teaching &amp; security</h4>
+        <ul>
+          <li>Trained students on CBET practical courses — system installation, network configuration, ICT equipment maintenance and safe use of ICT facilities.</li>
+          <li>Conducted cybersecurity awareness sessions and supported compliance with data protection requirements.</li>
+          <li>Collaborated with technical teams and service providers to resolve system and network incidents promptly.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job rv">
+      <div>
+        <div class="when"><i class="fa-solid fa-calendar-days"></i>Aug 2019 — Sept 2023</div>
+        <div class="where"><i class="fa-solid fa-building-columns"></i>KIPS Technical College</div>
+        <div class="tenure">4 years 2 months</div>
+      </div>
+      <div>
+        <h3>Head of Department, ICT / Systems &amp; Network Support</h3>
+        <p class="summary">Led ICT for a multi-campus college, held the network to 99% availability, and moved the institution's learning online through the COVID-19 lockdowns.</p>
+        <ul>
+          <li>Managed wired and wireless network infrastructure across the institution, sustaining 99% system availability through continuous monitoring and preventive maintenance.</li>
+          <li>Configured and maintained routers, switches, access points and firewall settings for secure, reliable connectivity.</li>
+          <li>Oversaw deployment, administration and continuity of eLearning systems, including migration to cloud-based platforms during COVID-19 lockdowns so learning continued uninterrupted.</li>
+          <li>Implemented user account management, secure login policies, antivirus systems and routine backup procedures to safeguard institutional data.</li>
+          <li>Provided first-line ICT support to a large user base across multiple campuses, resolving system, network and application issues.</li>
+          <li>Maintained ICT asset inventories and equipment registers, including issuance, tracking and accountability.</li>
+          <li>Monitored network performance and bandwidth usage, and supported SLA compliance and vendor performance reporting.</li>
+          <li>Supported ICT procurement with technical specifications and evaluation input.</li>
+          <li>Trained students on CBET practical courses in system installation, network configuration and ICT equipment maintenance.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job rv">
+      <div>
+        <div class="when"><i class="fa-solid fa-calendar-days"></i>May 2018 — Aug 2018</div>
+        <div class="where"><i class="fa-solid fa-building-columns"></i>KIPS Technical College</div>
+        <div class="tenure">4 months</div>
+      </div>
+      <div>
+        <h3>IT Intern, Network Support</h3>
+        <p class="summary">First exposure to institutional ICT — hardware, networks and the asset discipline that has stayed with me since.</p>
+        <ul>
+          <li>Assisted with installation and setup of network devices, printers and switches.</li>
+          <li>Performed regular maintenance and troubleshooting to minimise downtime.</li>
+          <li>Carried out hardware repairs, software updates and basic network configuration.</li>
+          <li>Maintained ICT asset and equipment registers — tagging, issuance, tracking and reconciliation to support audit requirements.</li>
+          <li>Responded to user service requests and guided staff on effective use of ICT resources.</li>
+          <li>Updated asset records after installation, repair, replacement or disposal of equipment.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2><i class="fa-solid fa-folder-open"></i>Projects</h2>
+      <p>Systems, dashboards and integrations I have designed, built or deployed. Filter by the kind of work you're interested in.</p>
+    </div>
+
+    <div class="filters rv" role="group" aria-label="Filter projects by type">
+      <button type="button" data-filter="all" aria-pressed="true"><i class="fa-solid fa-layer-group"></i>All work</button>
+      <button type="button" data-filter="data" aria-pressed="false"><i class="fa-solid fa-chart-pie"></i>Data &amp; dashboards</button>
+      <button type="button" data-filter="systems" aria-pressed="false"><i class="fa-solid fa-server"></i>Systems</button>
+      <button type="button" data-filter="integration" aria-pressed="false"><i class="fa-solid fa-plug"></i>Integrations</button>
+      <button type="button" data-filter="web" aria-pressed="false"><i class="fa-solid fa-globe"></i>Web &amp; eLearning</button>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+
+    <div id="project-list">
+
+      <!-- NEW: Power BI Hotel Business Dashboard -->
+      <article class="project featured rv" data-cat="data" id="hotel-dashboard">
+        <div class="p-side">
+          <span class="badge bi"><i class="fa-solid fa-chart-column"></i>Power BI</span><span class="new">NEW</span>
+          <div class="year">2026</div>
+          <div class="kind">Business intelligence</div>
+          <div class="stack">Power BI Desktop · Power Query · DAX</div>
+        </div>
+        <div>
+          <h3>Hotel Business Dashboard — Power BI data analytics</h3>
+
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>A hotel business generates plenty of raw operational data, but in that form it cannot tell management how the business is performing or where to act. The brief was to turn it into an interactive dashboard built around the KPIs the client actually cares about.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Worked through the full Power BI workflow as a real-world business scenario, from requirements to a published, portfolio-ready report:</dd>
+          </dl>
+
+          <p class="pipeline-label"><i class="fa-solid fa-route"></i>The workflow</p>
+          <ol class="pipeline">
+            <li><strong>Business requirements</strong>Identified the hotel's needs, client expectations and the KPIs the dashboard had to answer.</li>
+            <li><strong>Data loading</strong>Imported the relevant hotel datasets into Power BI for analysis.</li>
+            <li><strong>Data transformation</strong>Cleaned, organised and prepared the data in Power Query for accurate reporting.</li>
+            <li><strong>DAX measures</strong>Built the calculations and business metrics with Data Analysis Expressions.</li>
+            <li><strong>Dashboard visualisation</strong>Designed interactive views with charts, tables, KPI cards and slicers.</li>
+            <li><strong>Project publication</strong>Prepared the .pbix project file and published the dashboard to my portfolio.</li>
+          </ol>
+
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>An interactive dashboard that turns raw hotel data into KPI-level insight a manager can filter and explore without asking for a new report — and a reusable Power BI workflow I now apply to organisational data.</dd>
+          </dl>
+
+          <p class="takeaway">Data analytics goes beyond creating charts. It is about understanding business problems, preparing reliable data, building meaningful measures, and presenting insights that drive better decisions.</p>
+
+          <ul class="tags">
+            <li>Power BI</li><li>Power Query</li><li>DAX</li><li>Data modelling</li><li>KPIs</li><li>Data visualisation</li><li>Business intelligence</li><li>Hotel analytics</li>
+          </ul>
+          <div class="p-links">
+            <a class="p-link" href="#contact">Request the .pbix file or a walkthrough<i class="fa-solid fa-arrow-right"></i></a>
+            <a class="p-link" href="https://www.linkedin.com/in/felix-mumo-itofficer254" target="_blank" rel="noopener">Read the post on LinkedIn<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="data">
+        <div class="p-side">
+          <span class="badge"><i class="fa-brands fa-python"></i>Notebook</span>
+          <div class="year">Kaggle</div>
+          <div class="kind">Data cleaning</div>
+          <div class="stack">Python · pandas · Kaggle</div>
+        </div>
+        <div>
+          <h3>Python data cleaning — Netflix titles dataset</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>The Netflix Movies and TV Shows dataset is a realistic mess: missing directors, cast and country values, dates stored as free text, duration mixing minutes and seasons in one column, and inconsistent categorical labels. None of it is usable for analysis as it arrives.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Worked through the cleaning in a Kaggle notebook with pandas — profiling the data first, handling nulls deliberately rather than dropping rows blindly, converting dates to proper datetime types, splitting and standardising the duration field, removing duplicates, and normalising the categorical columns before running exploratory analysis on the cleaned result.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>A reproducible notebook that takes the raw dataset to an analysis-ready table, with each transformation documented so the steps can be re-run or audited.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Python</li><li>pandas</li><li>Data cleaning</li><li>Missing data handling</li><li>Exploratory data analysis</li><li>Kaggle</li>
+          </ul>
+          <a class="p-link" href="https://www.kaggle.com/code/mumofelix/week-2-assignment-notebook" target="_blank" rel="noopener">Open the notebook on Kaggle<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="data">
+        <div class="p-side">
+          <span class="badge"><i class="fa-brands fa-python"></i>Notebook</span>
+          <div class="year">Google Colab</div>
+          <div class="kind">Web scraping</div>
+          <div class="stack">Python · Colab</div>
+        </div>
+        <div>
+          <h3>Data scraping in Python</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Plenty of the data worth analysing only exists on a web page — published as a table or a list, with no export button and no API behind it.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Built a scraper in a Google Colab notebook that requests the pages, parses the markup to pull out the fields that matter, walks through pagination, and loads the extracted records into a pandas DataFrame for cleaning and export.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>A structured dataset assembled from pages that offered no download, ready to feed straight into analysis or a dashboard.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Python</li><li>Web scraping</li><li>BeautifulSoup</li><li>requests</li><li>pandas</li><li>Google Colab</li>
+          </ul>
+          <a class="p-link" href="https://colab.research.google.com/drive/1Qzfclyr47k6nRlJfdotI_e7c5qPBmin5?usp=sharing" target="_blank" rel="noopener">Open the notebook in Colab<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="data systems">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-chart-line"></i>Dashboard</span>
+          <div class="year">Data &amp; analytics</div>
+          <div class="kind">Reporting</div>
+          <div class="stack">Python · pandas · SQL · Power BI</div>
+        </div>
+        <div>
+          <h3>M-Pesa payments analysis &amp; reporting dashboard</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>M-Pesa statements arrive as long, flat transaction exports. Reconciling them against invoices was manual, slow and inconsistent, and nobody could see collection trends without rebuilding a spreadsheet each month.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Built a repeatable pipeline in Python to ingest and clean the transaction exports — normalising dates, stripping duplicates, parsing reference codes and matching payments to accounts. Modelled the cleaned data in SQL, then built a dashboard surfacing collection trends, outstanding balances, payment timing and period-on-period comparisons.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>Monthly reconciliation dropped from a manual exercise to a refresh. Finance and management read the same numbers, and arrears became visible early enough to act on rather than at year end.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Python</li><li>pandas</li><li>Data cleaning</li><li>SQL</li><li>Power BI</li><li>Data visualisation</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="systems data">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-droplet"></i>Full build</span>
+          <div class="year">Utility billing</div>
+          <div class="kind">System</div>
+          <div class="stack">PHP · MySQL · Analytics</div>
+        </div>
+        <div>
+          <h3>Water billing management system with integrated analytics</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Meter readings, customer records and payments were kept separately, so billing errors were common and there was no reliable view of who owed what or how consumption was changing.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Ran requirements gathering with the operators, designed the data model and ERDs, and built the system end to end: customer and connection records, meter reading capture, automated invoicing, payment posting and an analytics module over the top.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>One source of truth for billing, with reporting on consumption patterns, revenue collection rates and defaulters — the analytics that let management chase the right accounts instead of all of them.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Requirements gathering</li><li>Database design</li><li>ERDs</li><li>PHP</li><li>MySQL</li><li>Reporting</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="integration systems">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-mobile-screen"></i>Integration</span>
+          <div class="year">Payments</div>
+          <div class="kind">API gateway</div>
+          <div class="stack">Daraja API · REST · Postman</div>
+        </div>
+        <div>
+          <h3>Safaricom M-Pesa STK Push payment gateway</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Customers were paying to a paybill and then sending screenshots. Every payment needed a human to match it to an invoice, and mistakes were routine.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Integrated the Safaricom Daraja API so the system triggers an STK Push prompt on the customer's phone at checkout. Built and tested the callback handling in Postman so each confirmed transaction posts against the correct invoice automatically, with failed and timed-out payments handled cleanly rather than left hanging.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>Payments reconcile themselves. Customers pay from a prompt instead of copying a till number, and the transaction record that lands in the database is the same one the analytics later run on.</dd>
+          </dl>
+          <ul class="tags">
+            <li>REST APIs</li><li>Daraja API</li><li>STK Push</li><li>Callbacks</li><li>Postman</li><li>PHP</li><li>Node.js</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="systems integration">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-house"></i>Product</span>
+          <div class="year">Property management</div>
+          <div class="kind">System</div>
+          <div class="stack">MySQL · M-Pesa · Reporting</div>
+        </div>
+        <div>
+          <h3>RentIQ — rent collection &amp; property management automation</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Landlords and small property managers track tenants in notebooks and WhatsApp. Arrears build up quietly, and occupancy is guessed at rather than known.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Designed and built a system covering properties, units and tenant records, rent invoicing on a schedule, payment reconciliation through M-Pesa, arrears tracking and occupancy reporting — with the automation deliberately aimed at the repetitive monthly work.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>Rent cycles run without manual chasing, and a manager can see arrears and occupancy across a portfolio on one screen.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Systems design</li><li>MySQL</li><li>M-Pesa integration</li><li>Automation</li><li>Reporting</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="web systems">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-chalkboard"></i>Platform</span>
+          <div class="year">2020 — 2026</div>
+          <div class="kind">eLearning</div>
+          <div class="stack">Moodle · cPanel · Cloud</div>
+        </div>
+        <div>
+          <h3>Moodle e-learning platform &amp; SmartBoard content delivery</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Teaching had to keep running when campuses closed during COVID-19, and later had to support CBET assessment, which requires evidence of practical work rather than just grades.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Deployed and customised a Moodle platform, migrated it to cloud hosting for continuity, and extended it with a SmartBoard setup for digital content delivery and a Digital Portfolio of Evidence for eLearning students. Wrote the user manuals and recorded video tutorials, then supported lecturers and students through adoption.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>Learning continued through lockdown without interruption, and assessors had a structured place to find student evidence instead of chasing it.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Moodle</li><li>Cloud migration</li><li>Web server administration</li><li>cPanel</li><li>User training</li><li>Documentation</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="systems data">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-folder-tree"></i>Full build</span>
+          <div class="year">Records management</div>
+          <div class="kind">System</div>
+          <div class="stack">MySQL · Reporting</div>
+        </div>
+        <div>
+          <h3>Church reporting &amp; records management system</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Membership and contribution records lived in scattered spreadsheets and exercise books, so producing an annual report meant reconstructing the year from fragments.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Gathered requirements from the administrators, designed a single data model for members, groups, attendance and contributions, and built structured reporting on top of it.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>Consistent monthly and annual reports generated from one system, with contribution records that reconcile.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Requirements gathering</li><li>Database design</li><li>MySQL</li><li>Reporting</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="systems data">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-cart-shopping"></i>Full build</span>
+          <div class="year">E-commerce</div>
+          <div class="kind">Retail</div>
+          <div class="stack">Web · MySQL · Sales analytics</div>
+        </div>
+        <div>
+          <h3>Online computer shop with sales analytics</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>A computer retailer needed to sell online, but more importantly needed to know what was actually moving and what was sitting in stock.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Built the storefront, product catalogue, cart and order handling, and added a sales analytics layer reporting on revenue, best sellers and stock movement.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>Orders come in through the site, and purchasing decisions are made from the sales data rather than by instinct.</dd>
+          </dl>
+          <ul class="tags">
+            <li>E-commerce</li><li>PHP</li><li>MySQL</li><li>Sales analytics</li><li>Reporting</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="systems web">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-book"></i>Full build</span>
+          <div class="year">Education</div>
+          <div class="kind">System</div>
+          <div class="stack">Web · MySQL</div>
+        </div>
+        <div>
+          <h3>School assignments management system</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Assignments were issued and collected informally, making it hard to track submissions, deadlines and marking across classes.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Built a system for issuing assignments, handling student submissions, tracking deadlines and recording marks, with visibility for both teaching staff and students.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>A clear record of who submitted what and when, and less time lost to chasing missing work.</dd>
+          </dl>
+          <ul class="tags">
+            <li>Web development</li><li>MySQL</li><li>User management</li><li>Reporting</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="project rv" data-cat="systems integration">
+        <div class="p-side">
+          <span class="badge"><i class="fa-solid fa-cash-register"></i>Deployments</span>
+          <div class="year">Retail</div>
+          <div class="kind">Point of sale</div>
+          <div class="stack">POS · MySQL</div>
+        </div>
+        <div>
+          <h3>Point of sale systems</h3>
+          <dl class="detail">
+            <dt><i class="fa-solid fa-circle-exclamation"></i>The problem</dt>
+            <dd>Small retailers running on manual receipts have no stock accuracy and no daily sales picture.</dd>
+            <dt><i class="fa-solid fa-screwdriver-wrench"></i>What I did</dt>
+            <dd>Set up point of sale systems covering sales capture, stock levels, receipting and daily reporting, then trained the staff who use them every day.</dd>
+            <dt><i class="fa-solid fa-circle-check"></i>The result</dt>
+            <dd>Accurate daily takings, stock that reconciles, and owners who can see performance without counting shelves.</dd>
+          </dl>
+          <ul class="tags">
+            <li>POS</li><li>Inventory</li><li>MySQL</li><li>User training</li>
+          </ul>
+          <a class="p-link" href="#contact">Ask me about this project<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="empty" id="empty" hidden><i class="fa-solid fa-circle-info"></i> No projects in that category yet. Choose another filter.</p>
+
+    <div class="sub rv">
+      <h3><i class="fa-solid fa-globe"></i>Websites built and maintained</h3>
+      <p class="lead">Live sites I designed, built or maintain — including hosting, domains, DNS, SSL and SEO.</p>
+      <div class="sites">
+        <a class="site" href="https://www.mealhubafrica.com/" target="_blank" rel="noopener">
+          <strong>Meal Hub Africa <i class="fa-solid fa-arrow-up-right-from-square"></i></strong>
+          <div class="host">mealhubafrica.com</div>
+          <div class="what">Food and catering platform — build, hosting and ongoing maintenance.</div>
+        </a>
+        <a class="site" href="https://a-pluscapitallimited.com/" target="_blank" rel="noopener">
+          <strong>A-Plus Capital Limited <i class="fa-solid fa-arrow-up-right-from-square"></i></strong>
+          <div class="host">a-pluscapitallimited.com</div>
+          <div class="what">Corporate site for a financial services firm, with SEO and security hardening.</div>
+        </a>
+        <a class="site" href="https://strofixinteriors.co.ke/" target="_blank" rel="noopener">
+          <strong>Strofix Interiors <i class="fa-solid fa-arrow-up-right-from-square"></i></strong>
+          <div class="host">strofixinteriors.co.ke</div>
+          <div class="what">Portfolio site for an interiors company — design, build and content management.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="sub rv">
+      <h3><i class="fa-solid fa-list-check"></i>Also delivered</h3>
+      <ul class="more">
+        <li>
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <div>
+            <strong>E-Learning SmartBoard platform</strong>
+            <span>Digital content delivery setup for classroom and remote teaching.</span>
+          </div>
+        </li>
+        <li>
+          <i class="fa-solid fa-chart-column"></i>
+          <div>
+            <strong>Virtual Campus revenue analysis</strong>
+            <span>Revenue trend and performance reporting used for strategic planning at NIBS.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CREDENTIALS ===================== -->
+<section id="credentials">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2><i class="fa-solid fa-graduation-cap"></i>Education &amp; certifications</h2>
+      <p>Formal training, and the certifications I have added since — weighted towards data protection, security, delivery and, most recently, business intelligence.</p>
+    </div>
+
+    <div class="cred-grid">
+      <div class="cred rv">
+        <h3><i class="fa-solid fa-user-graduate"></i>Education &amp; training</h3>
+        <p>Degree, digital literacy certification and recent analytics training.</p>
+        <div class="cred-item">
+          <i class="fa-solid fa-chart-column"></i>
+          <div>
+            <strong>Power BI Data Analytics — Hotel Business Dashboard module</strong>
+            <span>2026 — requirements &amp; KPIs, data loading, Power Query transformation, DAX measures, dashboard design and publication</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <i class="fa-solid fa-award"></i>
+          <div>
+            <strong>BSc Information Technology</strong>
+            <span>South Eastern Kenya University, 2015–2019 — Second Class Honours (Upper Division)</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <i class="fa-solid fa-certificate"></i>
+          <div>
+            <strong>Advanced Certificate, International Certification in Digital Literacy (ICDL)</strong>
+            <span>NIBS Technical College, 2025</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <i class="fa-solid fa-certificate"></i>
+          <div>
+            <strong>Certificate, International Certification in Digital Literacy (ICDL)</strong>
+            <span>Machakos Institute of Technology, 2015</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cred rv">
+        <h3><i class="fa-solid fa-shield-halved"></i>Certifications</h3>
+        <p>Seven certifications across security, compliance, development and project delivery.</p>
+        <div class="cred-item"><i class="fa-solid fa-lock"></i><div><strong>Data Protection</strong><span>CIPIT, Strathmore University — 2025</span></div></div>
+        <div class="cred-item"><i class="fa-solid fa-user-secret"></i><div><strong>Cisco Ethical Hacking</strong><span>Cyber Shujaa, USIU — 2024</span></div></div>
+        <div class="cred-item"><i class="fa-solid fa-shield-virus"></i><div><strong>Cyber Security Analysis</strong><span>Cyber Shujaa, USIU — 2024</span></div></div>
+        <div class="cred-item"><i class="fa-solid fa-globe"></i><div><strong>Web Security</strong><span>Mindluster — 2024</span></div></div>
+        <div class="cred-item"><i class="fa-brands fa-android"></i><div><strong>Android App Development</strong><span>eMobilis — 2024</span></div></div>
+        <div class="cred-item"><i class="fa-solid fa-gears"></i><div><strong>ITIL 4 Fundamentals</strong><span>Alison — 2023</span></div></div>
+        <div class="cred-item"><i class="fa-brands fa-google"></i><div><strong>Google Project Management &amp; UX Design</strong><span>Coursera — 2022</span></div></div>
+      </div>
+    </div>
+
+    <div class="refs rv">
+      <h3><i class="fa-solid fa-user-check"></i>References</h3>
+      <p>Three academic and professional referees are available on request — please contact me and I will share their details directly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+  <div class="wrap">
+    <h2 class="rv">Let's turn your systems, and the data inside them, into something useful.</h2>
+    <p class="lead rv">Available for ICT officer roles, data analysis and Power BI dashboard work, systems analysis and integration projects in Nairobi and across Kenya.</p>
+    <p class="avail rv"><span class="dot" aria-hidden="true"></span>Currently open to new opportunities — I reply within a day.</p>
+    <div class="contact-rows rv">
+      <a class="crow" href="tel:+254710557540">
+        <span class="ico"><i class="fa-solid fa-phone"></i></span>
+        <div>
+          <span>Phone</span>
+          <strong>0710 557 540</strong>
+          <em>Call or WhatsApp, +254 710 557 540</em>
+        </div>
+      </a>
+      <a class="crow" href="mailto:mumofelix235@gmail.com">
+        <span class="ico"><i class="fa-solid fa-envelope"></i></span>
+        <div>
+          <span>Email</span>
+          <strong>mumofelix235@gmail.com</strong>
+          <em>Best for detailed briefs and attachments</em>
+        </div>
+      </a>
+      <a class="crow" href="https://www.linkedin.com/in/felix-mumo-itofficer254" target="_blank" rel="noopener">
+        <span class="ico"><i class="fa-brands fa-linkedin-in"></i></span>
+        <div>
+          <span>LinkedIn</span>
+          <strong>felix-mumo-itofficer254</strong>
+          <em>Full professional history</em>
+        </div>
+      </a>
+      <a class="crow" href="https://github.com/felixmumo" target="_blank" rel="noopener">
+        <span class="ico"><i class="fa-brands fa-github"></i></span>
+        <div>
+          <span>GitHub</span>
+          <strong>github.com/felixmumo</strong>
+          <em>Code and project repositories</em>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div class="name"><i class="fa-solid fa-code"></i>Felix Musyoka Mumo</div>
+        <div class="foot-links">
+          <a href="tel:+254710557540"><i class="fa-solid fa-phone"></i>0710 557 540</a>
+          <a href="https://www.linkedin.com/in/felix-mumo-itofficer254" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>www.linkedin.com/in/felix-mumo-itofficer254</a>
+        </div>
+      </div>
+      <div class="copy">
+        <span>© <span id="yr">2026</span> Felix Musyoka Mumo. Kasarani, Nairobi, Kenya.</span>
+        <span><a href="Felix_Mumo_CV.pdf" download>Download CV</a> · <a href="#top">Back to top</a></span>
+      </div>
+    </div>
+  </footer>
+</section>
+
+</main>
+
+<a class="totop" id="totop" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Photo fallback
+  var photo = document.getElementById('photo');
+  var portrait = document.getElementById('portrait');
+  function missing(){ portrait.classList.add('is-missing'); }
+  photo.addEventListener('error', missing);
+  if (photo.complete && photo.naturalWidth === 0) missing();
+
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  burger.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.innerHTML = open
+      ? '<i class="fa-solid fa-xmark"></i> Close'
+      : '<i class="fa-solid fa-bars"></i> Menu';
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a') && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.innerHTML = '<i class="fa-solid fa-bars"></i> Menu';
+    }
+  });
+
+  // Scroll progress + back to top
+  var progress = document.getElementById('progress');
+  var totop = document.getElementById('totop');
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (h.scrollTop || document.body.scrollTop) / max * 100 : 0;
+    progress.style.width = pct + '%';
+    totop.classList.toggle('show', (h.scrollTop || document.body.scrollTop) > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  var revealables = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduced) {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry, i) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        el.style.transitionDelay = Math.min(i * 70, 280) + 'ms';
+        el.classList.add('in');
+        ro.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealables.forEach(function (el) { ro.observe(el); });
+  } else {
+    revealables.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Counting stats
+  var stats = document.querySelectorAll('.stat b[data-count]');
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduced) { el.textContent = target + suffix; return; }
+    var start = null, dur = 1400;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        countUp(entry.target);
+        so.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+    stats.forEach(function (s) { so.observe(s); });
+  } else {
+    stats.forEach(function (s) { s.textContent = s.getAttribute('data-count') + (s.getAttribute('data-suffix') || ''); });
+  }
+
+  // Project filtering
+  var buttons = document.querySelectorAll('.filters button');
+  var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));
+  var count = document.getElementById('count');
+  var empty = document.getElementById('empty');
+
+  function apply(filter) {
+    var shown = 0;
+    projects.forEach(function (p) {
+      var match = filter === 'all' || p.getAttribute('data-cat').split(' ').indexOf(filter) > -1;
+      p.hidden = !match;
+      if (match) {
+        shown++;
+        p.classList.add('in');
+        if (!reduced) {
+          p.classList.remove('flash');
+          void p.offsetWidth;
+          p.classList.add('flash');
+        }
+      }
+    });
+    empty.hidden = shown !== 0;
+    count.textContent = shown === projects.length
+      ? 'Showing all ' + shown + ' projects.'
+      : 'Showing ' + shown + ' of ' + projects.length + ' projects.';
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      buttons.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      apply(b.getAttribute('data-filter'));
+    });
+  });
+  apply('all');
+
+  // Scroll-spy nav
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (a) {
+          a.classList.toggle('current', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
